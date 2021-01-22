@@ -1,0 +1,20 @@
+@import url(./__logo/header__logo.css);
+@import url(./__authorization/header__authorization.css);
+
+.header {
+    max-width: 882px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(84,84,84, .7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:640px) {
+    .header {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+}
