@@ -23,9 +23,29 @@ function AddPlacePopup(props) {
 
     return (
         <PopupWithForm isOpen={props.isOpen} name="add-element" title="Новое место" onClose={props.onClose} onSubmit={handleSubmit}>
-            <input id="name-input" name="name" type="text" className="modal__input modal__input_type_place" required value={placeName} onChange={handlePlaceNameChange} placeholder="Название" minLength="1" maxLength="30" />
+            <input
+            id="addplace-name-input"
+            name="name"
+            type="text"
+            className="modal__input modal__input_type_place"
+            value={placeName}
+            onChange={handlePlaceNameChange}
+            placeholder="Название"
+            minLength="1"
+            maxLength="30"
+            required
+            />
             <span id="name-input-error" className="modal__input-error" />
-            <input id="description-input" name="description" type="url" className="modal__input modal__input_type_url" required value={placeUrl} onChange={handlePlaceUrlChange} placeholder="Ссылка на картинку" />
+            <input
+            id="addplace-description-input"
+            name="description"
+            type="url"
+            className="modal__input modal__input_type_url"
+            value={placeUrl}
+            onChange={handlePlaceUrlChange}
+            placeholder="Ссылка на картинку"
+            required
+            />
             <span id="description-input-error" className="modal__input-error" />
         </PopupWithForm>
     );

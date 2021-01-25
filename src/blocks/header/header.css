@@ -1,5 +1,8 @@
 @import url(./__logo/header__logo.css);
 @import url(./__authorization/header__authorization.css);
+@import url(./__user-container/header__user-container.css);
+@import url(./__user-data/header__user-data.css);
+@import url(./__logout/header__logout.css);
 
 .header {
     max-width: 882px;

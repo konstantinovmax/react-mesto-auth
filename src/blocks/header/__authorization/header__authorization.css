@@ -6,6 +6,11 @@
     line-height: 22px;
 }
 
+.header__authorization:hover {
+    opacity: 60%; 
+    transition: opacity ease .3s;
+}
+
 @media screen and (max-width: 410px) {
     .header__authorization {
         font-size: 14px;

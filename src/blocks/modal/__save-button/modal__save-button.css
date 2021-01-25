@@ -3,6 +3,7 @@
     min-height: 50px;
     margin-top: 48px;
     background: #000000;
+    border: none;
     border-radius: 2px;
     color: white;
     font-weight: 400;
@@ -13,7 +14,7 @@
 }
 
 .modal__save-button:hover {
-    opacity: 0.5;
+    opacity: 60%;
     cursor: pointer;
     transition: opacity ease .3s;
 }
