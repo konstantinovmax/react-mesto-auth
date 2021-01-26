@@ -65,10 +65,6 @@ function App() {
     setSelectedCard({});
   }
 
-  function refreshPage() {
-    window.location.reload();
-  }
-
   function handleUpdateUser(newUserInfo) {
     api.patchEditProfile(newUserInfo)
       .then((res) => {
@@ -150,7 +146,6 @@ function App() {
           localStorage.setItem('jwt', res.token);
           setUserEmail(userEmail);
           setLoggedIn(true);
-          refreshPage();
           history.push('/');
         } else {
           setAccessNotice(false);

@@ -18,7 +18,9 @@ function AddPlacePopup(props) {
         props.onAddPlace({
             name: placeName,
             description: placeUrl
-        });
+        })
+        setPlaceName('');
+        setPlaceUrl('');
     } 
 
     return (

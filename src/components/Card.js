@@ -29,7 +29,7 @@ function Card(props) {
 
     return (
         <>
-            <figure className="element" key={props.card._id}>
+            <figure className="element">
                 <button type="button" className={cardDeleteButtonClassName} onClick={handleDeleteClick} />
                 <img className="element__image" src={props.card.link} alt={props.card.name} onClick={handleClick}/>
                 <div className="element__caption-container">
