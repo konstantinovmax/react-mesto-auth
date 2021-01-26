@@ -1,7 +1,7 @@
 {
-  "name": "mesto-react",
+  "name": "react-mesto-auth",
   "version": "0.1.0",
-  "description": "Frontend of the Mesto project",
+  "description": "Frontend of the Mesto project with authorization",
   "private": true,
   "homepage": "https://konstantinovmax.github.io/react-mesto-auth",
   "dependencies": {
