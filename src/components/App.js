@@ -23,6 +23,7 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [accessNotice, setAccessNotice] = React.useState(false);
@@ -51,12 +52,21 @@ function App() {
     setIsInfoToolTipOpen(true);
   }
 
+  function handleMobileMenuOpen() {
+    setIsMobileMenuOpen(true);
+  }
+
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsInfoToolTipOpen(false);
+    setIsMobileMenuOpen(false);
     setSelectedCard({});
+  }
+
+  function refreshPage() {
+    window.location.reload();
   }
 
   function handleUpdateUser(newUserInfo) {
@@ -138,8 +148,9 @@ function App() {
       .then((res) => {
         if (res.token) {
           localStorage.setItem('jwt', res.token);
-          setLoggedIn(true);
           setUserEmail(userEmail);
+          setLoggedIn(true);
+          refreshPage();
           history.push('/cards');
         } else {
           setAccessNotice(false);
@@ -205,6 +216,9 @@ function App() {
             <Header
             userEmail={userEmail}
             signOut={handleLogout}
+            onOpenMobileMenu={handleMobileMenuOpen}
+            isOpen={isMobileMenuOpen}
+            onClose={closeAllPopups}
             />
             <Switch>
               <ProtectedRoute
@@ -257,7 +271,7 @@ function App() {
             isOpen={isInfoToolTipOpen}
             onClose={closeAllPopups}
             accessNotice={accessNotice}
-            />     
+            />
           </div>
         </CurrentUserContext.Provider>
       </div>

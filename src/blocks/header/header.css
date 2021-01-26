@@ -1,8 +1,13 @@
 @import url(./__logo/header__logo.css);
 @import url(./__authorization/header__authorization.css);
 @import url(./__user-container/header__user-container.css);
+@import url(./__user-container/_not-logged-in/header__user-container_not-logged-in.css);
 @import url(./__user-data/header__user-data.css);
 @import url(./__logout/header__logout.css);
+@import url(./__menu-burger-container/header__menu-burger-container.css);
+@import url(./__menu-burger-button/header__menu-burger-button.css);
+@import url(./__user-container-mobile/header__user-container-mobile.css);
+@import url(./__menu-burger-button/_close/header__menu-burger-button_close.css);
 
 .header {
     max-width: 882px;

@@ -11,6 +11,10 @@
     margin: 0 auto;
     padding-top: 60px;
     box-sizing: border-box;
+    min-height: calc(100vh - 230px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 410px) {
