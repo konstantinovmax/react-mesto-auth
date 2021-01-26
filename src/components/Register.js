@@ -15,7 +15,7 @@ function Register(props) {
     function handleSubmit(evt) {
         evt.preventDefault();
         const { email, password } = userData;
-        props.handleRegistration(email, password);
+        props.onRegister(email, password);
     }
 
     return (
@@ -30,6 +30,7 @@ function Register(props) {
                 value={userData.email}
                 onChange={handleChange}
                 placeholder="Email"
+                autoComplete="off"
                 required
                 />
                 <input

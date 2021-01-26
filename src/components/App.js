@@ -151,7 +151,7 @@ function App() {
           setUserEmail(userEmail);
           setLoggedIn(true);
           refreshPage();
-          history.push('/cards');
+          history.push('/');
         } else {
           setAccessNotice(false);
           handleInfoToolTip();
@@ -174,7 +174,7 @@ function App() {
             }
             setUserEmail(userEmail);
             setLoggedIn(true);
-            history.push('/cards');
+            history.push('/');
           }
         })
         .catch((err) => {
@@ -193,7 +193,7 @@ function App() {
 
 
   React.useEffect(() => {
-    tokenCheck();
+    tokenCheck(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
@@ -215,14 +215,14 @@ function App() {
           <div className="root__content">
             <Header
             userEmail={userEmail}
-            signOut={handleLogout}
+            onSignOut={handleLogout}
             onOpenMobileMenu={handleMobileMenuOpen}
             isOpen={isMobileMenuOpen}
             onClose={closeAllPopups}
             />
             <Switch>
               <ProtectedRoute
-                path='/cards'
+                exact path='/'
                 loggedIn={loggedIn}
                 component={Main}
                 onEditAvatar={handleEditAvatarClick}
@@ -235,16 +235,16 @@ function App() {
               />
               <Route path='/sign-up'>
                 <Register
-                handleRegistration={handleRegistration}
+                onRegister={handleRegistration}
                 />
               </Route>
               <Route path='/sign-in'>
                 <Login
-                handleLogin={handleLogin}
+                onLogin={handleLogin}
                 />
               </Route>
-              <Route exact path="/">
-                {loggedIn ? <Redirect to="/cards" /> : <Redirect to="/sign-in" />}
+              <Route path="*">
+                {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
               </Route>
             </Switch>
             <Footer />

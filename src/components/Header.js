@@ -7,19 +7,19 @@ function Header(props) {
     
     return (
         <Switch>
-            <Route path="/cards">
+            <Route exact path="/">
                 <div className={`header__user-container-mobile ${props.isOpen && 'header__user-container-mobile_is-open'}`}>
                     <p className="header__user-data">{email}</p>
-                    <button className="header__logout" onClick={props.signOut}>Выйти</button>
+                    <button className="header__logout" onClick={props.onSignOut}>Выйти</button>
                 </div>
                 <header className="header">
                     <img className="header__logo" src={logo} alt="Логотип сервиса Mesto" />
                     <div className="header__user-container">
                         <p className="header__user-data">{email}</p>
-                        <button className="header__logout" onClick={props.signOut}>Выйти</button>
+                        <button className="header__logout" onClick={props.onSignOut}>Выйти</button>
                     </div>
                     <button className="header__menu-burger-container" type="button" onClick={props.isOpen ? props.onClose : props.onOpenMobileMenu}>
-                        <span className={`header__menu-burger-button ${props.isOpen && 'header__menu-burger-button_close'}`}></span>
+                        <span className={`header__menu-burger-button ${props.isOpen && 'header__menu-burger-button_close'}`} />
                     </button>
                 </header>
             </Route>

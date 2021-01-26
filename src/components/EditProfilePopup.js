@@ -41,7 +41,7 @@ function EditProfilePopup(props) {
             name="name"
             type="text"
             className="modal__input modal__input_type_name"
-            value={name}
+            value={name || ''}
             onChange={handleChangeName}
             placeholder="Введите имя"
             minLength="2"
@@ -54,7 +54,7 @@ function EditProfilePopup(props) {
             name="description"
             type="text"
             className="modal__input modal__input_type_description"
-            value={description}
+            value={description || ''}
             onChange={handleChangeDescription}
             placeholder="Введите описание"
             minLength="2"

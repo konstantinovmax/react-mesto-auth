@@ -15,7 +15,7 @@ function Login(props) {
     function handleSubmit(evt) {
         evt.preventDefault();
         const { email, password } = userData;
-        props.handleLogin(email, password);
+        props.onLogin(email, password);
     }
 
     return (
@@ -30,6 +30,7 @@ function Login(props) {
                 value={userData.email}
                 onChange={handleChange}
                 placeholder="Email"
+                autoComplete="off"
                 required
                 />
                 <input
